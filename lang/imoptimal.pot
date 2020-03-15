@@ -1,0 +1,240 @@
+# Copyright (C) 2019 imoptimal
+# This file is distributed under the same license as the imoptimal package.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: imoptimal\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: Ivan @ imoptimal.com <info@imoptimal.com>\n"
+"Last-Translator: imoptimal <info@imoptimal.com>\n"
+"Report-Msgid-Bugs-To: https://www.imoptimal.com\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:7
+msgid "404"
+msgstr ""
+
+#: 404.php:8
+msgid "Page that you've been looking for, has not been found..."
+msgstr ""
+
+#: 404.php:9
+msgid "We apologize for that."
+msgstr ""
+
+#: 404.php:11
+msgid "Use the search below to find specified content:"
+msgstr ""
+
+#: 404.php:12
+msgid "Alternatively, click"
+msgstr ""
+
+#: 404.php:13
+msgid "here"
+msgstr ""
+
+#: 404.php:14
+msgid "to return on the homepage."
+msgstr ""
+
+#: archive.php:13 front-page.php:17 index.php:13 search.php:19
+msgid "Previous Page"
+msgstr ""
+
+#: archive.php:14 front-page.php:18 index.php:14 search.php:20
+msgid "Next Page"
+msgstr ""
+
+#: archive.php:20 front-page.php:24 index.php:20 page.php:27 search.php:26
+#: single.php:14
+msgid "Content not found."
+msgstr ""
+
+#: comments.php:9
+#, php-format
+msgctxt "comments title"
+msgid "One Reply to \"%s\""
+msgstr ""
+
+#: comments.php:14
+#, php-format
+msgctxt "comments title"
+msgid "%1$s Reply to \"%2$s\""
+msgid_plural "%1$s Replies to \"%2$s\""
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:42
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:43
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:44
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:51
+msgid "Comments are closed."
+msgstr ""
+
+#: content.php:19 content.php:38 content.php:45
+msgid "Read more"
+msgstr ""
+
+#: functions.php:15
+msgid "Header Menu"
+msgstr ""
+
+#: functions.php:16
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:85
+msgid "Header"
+msgstr ""
+
+#: functions.php:87
+msgid "Widget area added in the header section."
+msgstr ""
+
+#: functions.php:95
+msgid "Homepage"
+msgstr ""
+
+#: functions.php:97
+msgid "Widget area added in the homepage content section."
+msgstr ""
+
+#: functions.php:105
+msgid "Pages"
+msgstr ""
+
+#: functions.php:107
+msgid "Widget area added in any page but homepage content section."
+msgstr ""
+
+#: functions.php:115
+msgid "Footer"
+msgstr ""
+
+#: functions.php:117
+msgid "Widget area added in the footer section."
+msgstr ""
+
+#: functions.php:125
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:127
+msgid "Widget area added in the sidebar section."
+msgstr ""
+
+#: functions.php:135
+msgid "404 error"
+msgstr ""
+
+#: functions.php:137
+msgid "Widget area added in the 404 page."
+msgstr ""
+
+#: functions.php:146
+msgid "Shop"
+msgstr ""
+
+#: functions.php:148
+msgid "Displays on WooCommerce pages."
+msgstr ""
+
+#: functions.php:170
+msgid "Imoptimal - Widgetization"
+msgstr ""
+
+#: functions.php:179
+msgid "Enable theme widgetization"
+msgstr ""
+
+#: functions.php:180
+msgid "Check the box if you want to enable the option to build your whole website with widgets. Otherwise, if checkbox remains unchecked, default page templates will be used."
+msgstr ""
+
+#: functions.php:232
+msgid "Categorized as: "
+msgstr ""
+
+#: functions.php:235
+msgid "Uncategorized"
+msgstr ""
+
+#: functions.php:242
+msgid "Tags: "
+msgstr ""
+
+#: functions.php:245
+msgid "Untagged"
+msgstr ""
+
+#: functions.php:251
+msgid "Pages:"
+msgstr ""
+
+#: functions.php:257
+msgid "Next page"
+msgstr ""
+
+#: functions.php:258
+msgid "Previous page"
+msgstr ""
+
+#: functions.php:277
+msgid "Designed by"
+msgstr ""
+
+#: functions.php:279
+msgid "Imoptimal"
+msgstr ""
+
+#: header.php:19
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:35
+msgid "Dropdown Menu"
+msgstr ""
+
+#: header.php:36
+msgid "Menu"
+msgstr ""
+
+#: search.php:7
+msgid "Search results for:"
+msgstr ""
+
+#: searchform.php:3
+msgid "Search:"
+msgstr ""
+
+#: searchform.php:4
+msgid "Search content"
+msgstr ""
+
+#: searchform.php:5
+msgid "Type your search here"
+msgstr ""
+
+#: searchform.php:6
+msgid "Search"
+msgstr ""

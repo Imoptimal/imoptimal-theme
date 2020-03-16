@@ -14,6 +14,14 @@ It provides widget areas in these sections:
 header, footer, sidebar, homepage content, page content, 404 page, and shop page (if woocommerce plugin is active).
 All of the mentioned areas are available to the user inside of the Customizers widget area also, except the 404 page widget (which can be edited only through wp-admin widgets area).
 
+== Changelog ==
+
+= 1.0.0 - 1.4.0 =
+Approval process - modified and learned a lot.
+
+= 1.4.1 =
+Changed the themes screenshot, to preview the dropdown menu not visible in the preview mode.
+
 == Copyright ==
 Imoptimal Theme, Copyright 2020 Ivan Maljukanovic
 Imoptimal is distributed under the terms of the GNU GPL

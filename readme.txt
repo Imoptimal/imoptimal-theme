@@ -22,6 +22,9 @@ Approval process - modified and learned a lot.
 = 1.4.1 =
 Changed the themes screenshot, to preview the dropdown menu not visible in the preview mode.
 
+= 1.4.2 =
+Restyled the footer menu, in order to make the side scroll clearly visible.
+
 == Copyright ==
 Imoptimal Theme, Copyright 2020 Ivan Maljukanovic
 Imoptimal is distributed under the terms of the GNU GPL

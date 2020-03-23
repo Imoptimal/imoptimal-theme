@@ -25,6 +25,9 @@ Changed the themes screenshot, to preview the dropdown menu not visible in the p
 = 1.4.2 =
 Restyled the footer menu, in order to make the side scroll clearly visible.
 
+= 1.4.3 =
+Changed the themes URI - providing the more complete demo page as well.
+
 == Copyright ==
 Imoptimal Theme, Copyright 2020 Ivan Maljukanovic
 Imoptimal is distributed under the terms of the GNU GPL

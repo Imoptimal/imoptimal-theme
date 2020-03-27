@@ -4,11 +4,11 @@ Theme URI: https://imoptimal.com/portfolio/imoptimal-wordpress-theme/
 Author: Ivan Maljukanović @imoptimal
 Author URI: imoptimal.com
 Description: Starter theme, with an option to enable users to build their whole website with widgets (option available inside of admin menu, at Appearance/Customize). Best if used with Pagebuilder by Siteorigin plugin, and its widgets bundle. Intended for technically advanced users that build their own websites or websites for others, as a tool to make this process more efficient. IMPORTANT: CSS knowledge mandatory in order to use this theme to its fullest potential. It provides widget areas in these sections: header, footer, sidebar, homepage content, page content, 404 page, and shop page (if woocommerce plugin is active). All of the mentioned areas are available to the user inside of the Customizer widget area also, except the 404 page widget (which can be edited only through wp-admin widgets area).
-Version: 1.4.3
+Version: 1.4.4
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: imoptimal
-Domain Path: /lang/
+Domain Path: /lang
 Tags: theme-options, translation-ready, one-column, full-width-template, two-columns, right-sidebar, custom-menu, custom-logo, featured-images, footer-widgets
 */
 
@@ -597,7 +597,6 @@ ul {
 }
 
 /* Customizer Styling */
-
 .customize-partial-edit-shortcut {
     position: absolute;
     top: 45% !important;
@@ -619,7 +618,6 @@ ul {
 }
 
 /* Required */
-
 .wp-caption {
     font-size: 14.9328px;
     font-size: 0.9333rem;
@@ -681,8 +679,48 @@ ul {
     display: block;
 }
 
-/* 404 Error Page */
+/* Block custom colors */
+.has-imo-dark-background-color {
+    background-color: #050303;
+}
 
+.has-imo-dark-color {
+    color: #050303;
+}
+
+.has-imo-ice-background-color {
+    background-color: #efedf5;
+}
+
+.has-imo-ice-color {
+    color: #efedf5;
+}
+
+.has-imo-latte-background-color {
+    background-color: #f4c951;
+}
+
+.has-imo-latte-color {
+    color: #f4c951;
+}
+
+.has-imo-dark-purple-background-color {
+    background-color: #27061c;
+}
+
+.has-imo-dark-purple-color {
+    color: #27061c;
+}
+
+.has-imo-light-purple-background-color {
+    background-color: #84285b;
+}
+
+.has-imo-light-purple-color {
+    color: #84285b;
+}
+
+/* 404 Error Page */
 .imothm-container .imothm-content-404 {
     position: relative;
     color: #efedf5;
@@ -712,7 +750,6 @@ ul {
 }
 
 /* Responsive Design */
-
 @media only screen and (max-width: 1300px) {
 
     .imothm-container .main-column,

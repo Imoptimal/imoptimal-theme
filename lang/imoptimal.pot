@@ -103,107 +103,127 @@ msgstr ""
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:85
+#: functions.php:71
+msgid "Dark"
+msgstr ""
+
+#: functions.php:76
+msgid "Ice"
+msgstr ""
+
+#: functions.php:81
+msgid "Latte"
+msgstr ""
+
+#: functions.php:86
+msgid "Dark Purple"
+msgstr ""
+
+#: functions.php:91
+msgid "Light Purple"
+msgstr ""
+
+#: functions.php:114
 msgid "Header"
 msgstr ""
 
-#: functions.php:87
+#: functions.php:116
 msgid "Widget area added in the header section."
 msgstr ""
 
-#: functions.php:95
+#: functions.php:124
 msgid "Homepage"
 msgstr ""
 
-#: functions.php:97
+#: functions.php:126
 msgid "Widget area added in the homepage content section."
 msgstr ""
 
-#: functions.php:105
+#: functions.php:134
 msgid "Pages"
 msgstr ""
 
-#: functions.php:107
+#: functions.php:136
 msgid "Widget area added in any page but homepage content section."
 msgstr ""
 
-#: functions.php:115
+#: functions.php:144
 msgid "Footer"
 msgstr ""
 
-#: functions.php:117
+#: functions.php:146
 msgid "Widget area added in the footer section."
 msgstr ""
 
-#: functions.php:125
+#: functions.php:154
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:127
+#: functions.php:156
 msgid "Widget area added in the sidebar section."
 msgstr ""
 
-#: functions.php:135
+#: functions.php:164
 msgid "404 error"
 msgstr ""
 
-#: functions.php:137
+#: functions.php:166
 msgid "Widget area added in the 404 page."
 msgstr ""
 
-#: functions.php:146
+#: functions.php:175
 msgid "Shop"
 msgstr ""
 
-#: functions.php:148
+#: functions.php:177
 msgid "Displays on WooCommerce pages."
 msgstr ""
 
-#: functions.php:170
+#: functions.php:199
 msgid "Imoptimal - Widgetization"
 msgstr ""
 
-#: functions.php:179
+#: functions.php:208
 msgid "Enable theme widgetization"
 msgstr ""
 
-#: functions.php:180
+#: functions.php:209
 msgid "Check the box if you want to enable the option to build your whole website with widgets. Otherwise, if checkbox remains unchecked, default page templates will be used."
 msgstr ""
 
-#: functions.php:232
+#: functions.php:261
 msgid "Categorized as: "
 msgstr ""
 
-#: functions.php:235
+#: functions.php:264
 msgid "Uncategorized"
 msgstr ""
 
-#: functions.php:242
+#: functions.php:271
 msgid "Tags: "
 msgstr ""
 
-#: functions.php:245
+#: functions.php:274
 msgid "Untagged"
 msgstr ""
 
-#: functions.php:251
+#: functions.php:280
 msgid "Pages:"
 msgstr ""
 
-#: functions.php:257
+#: functions.php:286
 msgid "Next page"
 msgstr ""
 
-#: functions.php:258
+#: functions.php:287
 msgid "Previous page"
 msgstr ""
 
-#: functions.php:277
+#: functions.php:306
 msgid "Designed by"
 msgstr ""
 
-#: functions.php:279
+#: functions.php:308
 msgid "Imoptimal"
 msgstr ""
 

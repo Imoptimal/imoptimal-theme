@@ -9,7 +9,7 @@
             if(!function_exists('imothm_pages_wrap')) {
                 function imothm_pages_wrap() {
                     $imothm_pages = function() { ?>
-            <article class="post <?php if ( has_post_thumbnail() ) { ?>has-thumbnail <?php } ?>" <?php post_class(); ?>>
+            <article <?php imothm_add_post_classes('post', 'has-thumbnail'); ?>>
                 <h1><?php the_title(); ?></h1>
                 <div class="entry-content">
                     <?php the_content(); ?>

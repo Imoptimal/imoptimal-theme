@@ -65,6 +65,35 @@ if(!function_exists('imothm_theme_functions')) {
                 $content_width = 960;
             }
 
+            // Adding custom color pallete for blocks
+            add_theme_support( 'editor-color-palette', array(
+                array(
+                    'name' => esc_html__( 'Dark', 'imoptimal' ),
+                    'slug' => 'imo-dark',
+                    'color' => '#050303',
+                ),
+                array(
+                    'name' => esc_html__( 'Ice', 'imoptimal' ),
+                    'slug' => 'imo-ice',
+                    'color' => '#efedf5',
+                ),
+                array(
+                    'name' => esc_html__( 'Latte', 'imoptimal' ),
+                    'slug' => 'imo-latte',
+                    'color' => '#f4c951',
+                ),
+                array(
+                    'name' => esc_html__( 'Dark Purple', 'imoptimal' ),
+                    'slug' => 'imo-dark-purple',
+                    'color' => '#27061c',
+                ),
+                array(
+                    'name' => esc_html__( 'Light Purple', 'imoptimal' ),
+                    'slug' => 'imo-light-purple',
+                    'color' => '#84285b',
+                )
+            ) );
+
             // Add woocommerce support
             if ( class_exists( 'WooCommerce' ) ) {
                 add_theme_support( 'woocommerce' );

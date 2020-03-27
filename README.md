@@ -12,3 +12,6 @@ Restyled the footer menu, in order to make the side scroll clearly visible.
 
 = 1.4.3 =
 Changed the themes URI - providing the more complete demo page as well.
+
+= 1.4.4 =
+Added custom color palettes for blocks.

@@ -15,7 +15,8 @@
         <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('imothm-archive-image'); ?></a>
     </div>
 
-    <p class="excerpt"><?php esc_html(get_the_excerpt()); ?>
+    <p class="excerpt">
+        <?php the_excerpt(); ?>
         <a href="<?php the_permalink(); ?>"><?php esc_html_e('Read more', 'imoptimal'); ?> &raquo;</a>
     </p>
 
@@ -34,14 +35,16 @@
         <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('imothm-front-page'); ?></a>
     </div>
 
-    <p class="excerpt"><?php esc_html(get_the_excerpt()); ?>
+    <p class="excerpt">
+        <?php the_excerpt(); ?>
         <a href="<?php the_permalink(); ?>"><?php esc_html_e('Read more', 'imoptimal'); ?> &raquo;</a>
     </p>
 
     <?php } else { 
 
     if ($post->post_excerpt) { ?> 
-    <p class="excerpt"><?php esc_html(get_the_excerpt()); ?>
+    <p class="excerpt">
+        <?php the_excerpt(); ?>
         <a href="<?php the_permalink(); ?>"><?php esc_html_e('Read more', 'imoptimal'); ?> &raquo;</a>
     </p>
 

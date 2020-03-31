@@ -34,6 +34,9 @@ Added custom color palettes for blocks.
 = 1.4.5 =
 Fixed the post excerpt display on archive / home blog page.
 
+= 1.4.6 - 1.4.7 =
+Modified side column border on smaller screen resolutions.
+
 == Copyright ==
 Imoptimal Theme, Copyright 2020 Ivan Maljukanovic
 Imoptimal is distributed under the terms of the GNU GPL

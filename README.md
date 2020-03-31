@@ -18,3 +18,6 @@ Added custom color palettes for blocks.
 
 = 1.4.5 =
 Fixed the post excerpt display on archive / home blog page.
+
+= 1.4.6 - 1.4.7 =
+Modified side column border on smaller screen resolutions.

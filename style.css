@@ -4,7 +4,7 @@ Theme URI: https://imoptimal.com/portfolio/imoptimal-wordpress-theme/
 Author: Ivan Maljukanović @imoptimal
 Author URI: imoptimal.com
 Description: Starter theme, with an option to enable users to build their whole website with widgets (option available inside of admin menu, at Appearance/Customize). Best if used with Pagebuilder by Siteorigin plugin, and its widgets bundle. Intended for technically advanced users that build their own websites or websites for others, as a tool to make this process more efficient. IMPORTANT: CSS knowledge mandatory in order to use this theme to its fullest potential. It provides widget areas in these sections: header, footer, sidebar, homepage content, page content, 404 page, and shop page (if woocommerce plugin is active). All of the mentioned areas are available to the user inside of the Customizer widget area also, except the 404 page widget (which can be edited only through wp-admin widgets area).
-Version: 1.4.5
+Version: 1.4.7
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: imoptimal
@@ -752,16 +752,18 @@ ul {
 /* Responsive Design */
 @media only screen and (max-width: 1300px) {
 
-    .imothm-container .main-column,
-    .imothm-container .side-column {
+    .imothm-container .main-column {
         -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
         max-width: 100%; 
     }
 
-    .imothm-container .post,
-    .imothm-container .full-post {
-        border-bottom: solid 2px #f4c951;
+    .imothm-container .side-column {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        max-width: 100%; 
+        border-top: solid 2px #f4c951;
+        margin: 10px 25px;
     }
 }
 

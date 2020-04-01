@@ -37,6 +37,9 @@ Fixed the post excerpt display on archive / home blog page.
 = 1.4.6 - 1.4.7 =
 Modified side column border on smaller screen resolutions.
 
+= 1.4.8 =
+Modified archive post border, and website title and subtitle alignment.
+
 == Copyright ==
 Imoptimal Theme, Copyright 2020 Ivan Maljukanovic
 Imoptimal is distributed under the terms of the GNU GPL

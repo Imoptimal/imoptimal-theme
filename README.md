@@ -24,3 +24,6 @@ Modified side column border on smaller screen resolutions.
 
 = 1.4.8 =
 Modified archive post border, and website title and subtitle alignment.
+
+= 1.4.9 =
+Added comment area styles.

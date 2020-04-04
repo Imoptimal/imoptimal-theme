@@ -8,7 +8,7 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Stable tag: trunk
 
 == Description ==
-Starter theme, with an option to enable users to build their whole website with widgets (option available inside of admin menu, at Appearance/Customize). Best if used with Pagebuilder by Siteorigin plugin, and its widgets bundle. Intended for technically advanced users that build their own websites or websites for others, as a tool to make this process more efficient. IMPORTANT: CSS knowledge mandatory in order to use this theme to its fullest potential.
+Simplistic theme, with an option to enable users to build their whole website with widgets (option available inside of admin menu, at Appearance/Customize). Best if used with Pagebuilder by Siteorigin plugin, and its widgets bundle. Intended for technically advanced users that build their own websites or websites for others, as a tool to make this process more efficient. IMPORTANT: CSS knowledge mandatory in order to use this theme to its fullest potential.
 
 It provides widget areas in these sections:
 header, footer, sidebar, homepage content, page content, 404 page, and shop page (if woocommerce plugin is active).
@@ -39,6 +39,9 @@ Modified side column border on smaller screen resolutions.
 
 = 1.4.8 =
 Modified archive post border, and website title and subtitle alignment.
+
+= 1.4.9 =
+Added comment area styles.
 
 == Copyright ==
 Imoptimal Theme, Copyright 2020 Ivan Maljukanovic

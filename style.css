@@ -3,8 +3,8 @@ Theme Name: Imoptimal
 Theme URI: https://imoptimal.com/portfolio/imoptimal-wordpress-theme/
 Author: Ivan Maljukanović @imoptimal
 Author URI: imoptimal.com
-Description: Starter theme, with an option to enable users to build their whole website with widgets (option available inside of admin menu, at Appearance/Customize). Best if used with Pagebuilder by Siteorigin plugin, and its widgets bundle. Intended for technically advanced users that build their own websites or websites for others, as a tool to make this process more efficient. IMPORTANT: CSS knowledge mandatory in order to use this theme to its fullest potential. It provides widget areas in these sections: header, footer, sidebar, homepage content, page content, 404 page, and shop page (if woocommerce plugin is active). All of the mentioned areas are available to the user inside of the Customizer widget area also, except the 404 page widget (which can be edited only through wp-admin widgets area).
-Version: 1.4.8
+Description: Simplistic theme, with an option to enable users to build their whole website with widgets (option available inside of admin menu, at Appearance/Customize). Best if used with Pagebuilder by Siteorigin plugin, and its widgets bundle. Intended for technically advanced users that build their own websites or websites for others, as a tool to make this process more efficient. IMPORTANT: CSS knowledge mandatory in order to use this theme to its fullest potential. It provides widget areas in these sections: header, footer, sidebar, homepage content, page content, 404 page, and shop page (if woocommerce plugin is active). All of the mentioned areas are available to the user inside of the Customizer widget area also, except the 404 page widget (which can be edited only through wp-admin widgets area).
+Version: 1.4.9
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: imoptimal
@@ -12,6 +12,18 @@ Domain Path: /lang
 Tags: theme-options, translation-ready, one-column, full-width-template, two-columns, right-sidebar, custom-menu, custom-logo, featured-images, footer-widgets
 */
 
+/* Style order:
+1. Basic HTML
+2. Theme Elements
+3. Required
+4. Block custom colors
+5. Accessibility
+6. Scrollbars
+7. 404 Error Page
+8. Responsive Design
+*/
+
+/* 1. Basic HTML */
 * {
     position: relative;
     -webkit-box-sizing:border-box;
@@ -85,6 +97,7 @@ ul {
     text-align: left;
 }
 
+/* 2. Theme Elements */
 .imothm-container {
     color: #efedf5;
     background-color: #27061c;
@@ -344,10 +357,25 @@ ul {
 .imothm-container .post {
     border-bottom: solid 2px #f4c951;
     margin: 0 20px;
+    max-width: 960px;
 }
 
 .imothm-container .post:last-of-type {
     border-bottom: none;
+}
+
+.imothm-container .post .post-info {
+    padding-bottom: 20px;
+}
+
+.imothm-container .post .excerpt {
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.imothm-container .post-full {
+    max-width: 960px;
+    padding: 10px;
 }
 
 .imothm-container .entry-content {
@@ -418,6 +446,15 @@ ul {
     color: #efedf5;
     background-color: #84285B;
     cursor: pointer;
+}
+
+.imothm-container .comment-list {
+    padding: 0;
+}
+
+.imothm-container .comment-author.vcard img {
+    vertical-align: middle;
+    padding: 10px;
 }
 
 .imothm-container .site-footer {
@@ -539,93 +576,7 @@ ul {
     display: none !important;
 }
 
-/* Accessibility */
-.imothm-container .skip-link {
-    display: block;
-    padding: 5px;
-    border: 0;
-    clip: rect(1px, 1px, 1px, 1px);
-    -webkit-clip-path: inset(50%);
-    clip-path: inset(50%);
-    height: 1px;
-    width: 1px;
-    margin: -1px;
-    overflow: hidden;
-    color: #990000;
-    background-color: #efedf5;
-    position: absolute !important;
-    top: 10px;
-    right: -10px;
-    word-wrap: normal !important;
-    -webkit-transition: all 0.2s;
-    transition: all 0.2s;
-    z-index: 100000;
-    /* Above WP toolbar. */
-}
-
-.imothm-container .skip-link:focus {
-    right: 10px !important;
-    clip: auto !important;
-    -webkit-clip-path: none;
-    clip-path: none;
-    height: auto;
-    width: auto;
-    text-decoration: none;
-}
-
-.imothm-container .screen-reader-text {
-    display: block;
-    padding: 5px;
-    border: 0;
-    clip: rect(1px, 1px, 1px, 1px);
-    -webkit-clip-path: inset(50%);
-    clip-path: inset(50%);
-    height: 1px;
-    width: 1px;
-    margin: -1px;
-    overflow: hidden;
-    color: #990000;
-}
-
-/* Scrollbars */
-::-webkit-scrollbar {
-    width: 9px;
-}
-
-::-webkit-scrollbar-track {
-    background: #050303;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #f4c951;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    opacity: 0.75; 
-}
-
-/* Customizer Styling */
-.customize-partial-edit-shortcut {
-    position: absolute;
-    top: 45% !important;
-    left: 50% !important;
-    z-index: 100 !important;  
-}
-
-.customize-partial-edit-shortcut button {
-    top: 0 !important;
-    left: 2% !important;
-}
-
-.customize-partial-edit-shortcut:hover ~ * { 
-    opacity: 0.75;
-    -webkit-transform: translate(10px, 10px) scale(1.05);
-    transform: translate(10px, 10px) scale(1.05);
-    -webkit-transition: 0.3s all;
-    transition: 0.3s all;
-}
-
-/* Required */
+/* 3. Required */
 .wp-caption {
     font-size: 14.9328px;
     font-size: 0.9333rem;
@@ -687,7 +638,7 @@ ul {
     display: block;
 }
 
-/* Block custom colors */
+/* 4. Block custom colors */
 .has-imo-dark-background-color {
     background-color: #050303;
 }
@@ -728,7 +679,93 @@ ul {
     color: #84285b;
 }
 
-/* 404 Error Page */
+/* 5. Accessibility */
+.imothm-container .skip-link {
+    display: block;
+    padding: 5px;
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    color: #990000;
+    background-color: #efedf5;
+    position: absolute !important;
+    top: 10px;
+    right: -10px;
+    word-wrap: normal !important;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    z-index: 100000;
+    /* Above WP toolbar. */
+}
+
+.imothm-container .skip-link:focus {
+    right: 10px !important;
+    clip: auto !important;
+    -webkit-clip-path: none;
+    clip-path: none;
+    height: auto;
+    width: auto;
+    text-decoration: none;
+}
+
+.imothm-container .screen-reader-text {
+    display: block;
+    padding: 5px;
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    color: #990000;
+}
+
+/* 6. Scrollbars */
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050303;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #f4c951;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    opacity: 0.75; 
+}
+
+/* Customizer Styling */
+.customize-partial-edit-shortcut {
+    position: absolute;
+    top: 45% !important;
+    left: 50% !important;
+    z-index: 100 !important;  
+}
+
+.customize-partial-edit-shortcut button {
+    top: 0 !important;
+    left: 2% !important;
+}
+
+.customize-partial-edit-shortcut:hover ~ * { 
+    opacity: 0.75;
+    -webkit-transform: translate(10px, 10px) scale(1.05);
+    transform: translate(10px, 10px) scale(1.05);
+    -webkit-transition: 0.3s all;
+    transition: 0.3s all;
+}
+
+/* 7. 404 Error Page */
 .imothm-container .imothm-content-404 {
     position: relative;
     color: #efedf5;
@@ -757,7 +794,7 @@ ul {
     font-style: bold;
 }
 
-/* Responsive Design */
+/* 8. Responsive Design */
 @media only screen and (max-width: 1300px) {
 
     .imothm-container .main-column {

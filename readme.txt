@@ -43,6 +43,9 @@ Modified archive post border, and website title and subtitle alignment.
 = 1.4.9 =
 Added comment area styles.
 
+= 1.5.0 =
+Added border between full post content and comment area
+
 == Copyright ==
 Imoptimal Theme, Copyright 2020 Ivan Maljukanovic
 Imoptimal is distributed under the terms of the GNU GPL

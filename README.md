@@ -27,3 +27,6 @@ Modified archive post border, and website title and subtitle alignment.
 
 = 1.4.9 =
 Added comment area styles.
+
+= 1.5.0 =
+Added border between full post content and comment area.

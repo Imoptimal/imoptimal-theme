@@ -4,7 +4,7 @@ Theme URI: https://imoptimal.com/portfolio/imoptimal-wordpress-theme/
 Author: Ivan Maljukanović @imoptimal
 Author URI: imoptimal.com
 Description: Simplistic theme, with an option to enable users to build their whole website with widgets (option available inside of admin menu, at Appearance/Customize). Best if used with Pagebuilder by Siteorigin plugin, and its widgets bundle. Intended for technically advanced users that build their own websites or websites for others, as a tool to make this process more efficient. IMPORTANT: CSS knowledge mandatory in order to use this theme to its fullest potential. It provides widget areas in these sections: header, footer, sidebar, homepage content, page content, 404 page, and shop page (if woocommerce plugin is active). All of the mentioned areas are available to the user inside of the Customizer widget area also, except the 404 page widget (which can be edited only through wp-admin widgets area).
-Version: 1.4.9
+Version: 1.5.0
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: imoptimal
@@ -19,8 +19,9 @@ Tags: theme-options, translation-ready, one-column, full-width-template, two-col
 4. Block custom colors
 5. Accessibility
 6. Scrollbars
-7. 404 Error Page
-8. Responsive Design
+7. Customizer Styling
+8. 404 Error Page
+9. Responsive Design
 */
 
 /* 1. Basic HTML */
@@ -319,6 +320,7 @@ ul {
 }
 
 .imothm-container .main-column {
+    max-width: 960px;
     padding: 0 10px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -357,7 +359,6 @@ ul {
 .imothm-container .post {
     border-bottom: solid 2px #f4c951;
     margin: 0 20px;
-    max-width: 960px;
 }
 
 .imothm-container .post:last-of-type {
@@ -373,13 +374,7 @@ ul {
     padding-bottom: 10px;
 }
 
-.imothm-container .post-full {
-    max-width: 960px;
-    padding: 10px;
-}
-
-.imothm-container .entry-content {
-    max-width: 960px;
+.imothm-container .post.full-post {
     padding: 10px;
 }
 
@@ -392,6 +387,7 @@ ul {
 }
 
 .imothm-container .comments-area {
+    border-top: solid 2px #f4c951;
     max-width: 90%;
     padding: 10px;
     margin: 0;
@@ -744,7 +740,7 @@ ul {
     opacity: 0.75; 
 }
 
-/* Customizer Styling */
+/* 7. Customizer Styling */
 .customize-partial-edit-shortcut {
     position: absolute;
     top: 45% !important;
@@ -765,7 +761,7 @@ ul {
     transition: 0.3s all;
 }
 
-/* 7. 404 Error Page */
+/* 8. 404 Error Page */
 .imothm-container .imothm-content-404 {
     position: relative;
     color: #efedf5;
@@ -794,7 +790,7 @@ ul {
     font-style: bold;
 }
 
-/* 8. Responsive Design */
+/* 9. Responsive Design */
 @media only screen and (max-width: 1300px) {
 
     .imothm-container .main-column {

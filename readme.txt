@@ -44,7 +44,10 @@ Modified archive post border, and website title and subtitle alignment.
 Added comment area styles.
 
 = 1.5.0 =
-Added border between full post content and comment area
+Added border between full post content and comment area.
+
+= 1.5.1 =
+Lowered the resolution at which two column design becomes one column (right sidebar moves under the main content area).
 
 == Copyright ==
 Imoptimal Theme, Copyright 2020 Ivan Maljukanovic

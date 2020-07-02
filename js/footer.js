@@ -48,76 +48,110 @@ jQuery(function() {
 
 // Dropdown menu
 jQuery(function($) {
-    var handle = $('.imothm-container .site-header .dropdown-menu .handle');
-    var toggler = $('.imothm-container .site-header .dropdown-menu .toggle-menu');
+    var menuHandle = $('.imothm-container .site-header .dropdown-menu .handle');
+    var menuToggler = $('.imothm-container .site-header .dropdown-menu .toggle');
     var headerMenu = $('.imothm-container .site-header .dropdown-menu .header-menu');
+    var searchHandle = $('.imothm-container .site-header .search-toggle .handle');
+    var searchToggler = $('.imothm-container .site-header .search-toggle .toggle');
+    var searchForm = $('.imothm-container .site-header .search-toggle #searchform');
     var skipLink = $('.imothm-container .skip-link');
     $(headerMenu).prepend('<a class="close-menu" href="#"></a>');
     $(headerMenu).append('<a class="auto-close" href="#"></a>');
-    var closeButton = $('.imothm-container .site-header .dropdown-menu .close-menu');
-    var autoClose = $('.imothm-container .site-header .dropdown-menu .auto-close');
+    var menuCloseButton = $('.imothm-container .site-header .dropdown-menu .close-menu');
+    var menuAutoClose = $('.imothm-container .site-header .dropdown-menu .auto-close');
+    $(searchForm).prepend('<a class="close-menu" href="#"></a>');
+    $(searchForm).append('<a class="auto-close" href="#"></a>');
+    var searchCloseButton = $('.imothm-container .site-header .search-toggle .close-menu');
+    var searchAutoClose = $('.imothm-container .site-header .search-toggle .auto-close');
     // Enable menu to remain open with keyboard tab through menu
-    handle.on('focus', function() {
-        if (headerMenu.hasClass('slided')) {
-            headerMenu.removeClass('slided');
-            toggler.removeClass('clicked');
-        } else {
-            headerMenu.addClass('slided');
-            toggler.addClass('clicked');
-        }
-    });
+    function handleTabThrough(handle, handledItem, toggler) {
+        handle.on('focus', function() {
+            if (handledItem.hasClass('slided')) {
+                handledItem.removeClass('slided');
+                toggler.removeClass('clicked');
+            } else {
+                handledItem.addClass('slided');
+                toggler.addClass('clicked');
+            }
+        });
+    }
+    handleTabThrough(menuHandle, headerMenu, menuToggler);
+    handleTabThrough(searchHandle, searchForm, searchToggler);
     // Close on last tab trough dropdown menu
-    $(autoClose).on('keyup', function(e) { 
-        if (e.key === 'Tab' || e.key === 'Space' || e.key === 'Enter') {
-            e.preventDefault();
-            if (headerMenu.hasClass('slided')) {
-                headerMenu.toggleClass('slided');
-                toggler.removeClass('clicked');
+    function autoCloser(closeTrigger, closingItem, itemToggler) {
+        $(closeTrigger).on('keyup', function(e) {
+            if (e.key === 'Tab' || e.key === 'Space' || e.key === 'Enter') {
+                e.preventDefault();
+                if (closingItem.hasClass('slided')) {
+                    closingItem.toggleClass('slided');
+                    itemToggler.removeClass('clicked');
+                }
             }
-        }
-    });
+        });
+    }
+    autoCloser(menuAutoClose, headerMenu, menuToggler);
+    autoCloser(searchAutoClose, searchForm, searchToggler);
     // Close on shift+tab on skip-link
-    $(skipLink).on('keyup', function(e) { 
-        if (e.shiftKey && e.key === 'Tab') {
-            e.preventDefault();
-            if (headerMenu.hasClass('slided')) {
-                headerMenu.toggleClass('slided');
-                toggler.removeClass('clicked');
+    function closeInReverse(previousFocusElement, closingItem, itemToggler) {
+        $(previousFocusElement).on('keyup', function(e) {
+            if (e.shiftKey && e.key === 'Tab') {
+                e.preventDefault();
+                if (closingItem.hasClass('slided')) {
+                    closingItem.toggleClass('slided');
+                    itemToggler.removeClass('clicked');
+                }
             }
-        }
-    });
+        });
+    }
+    closeInReverse(skipLink, headerMenu, menuToggler);
+    closeInReverse('.custom-logo-link', searchForm, searchToggler);
     // Close menu on esc button
-    $(document).on( 'keydown', function( e ) {
-        if ( e.keyCode === 27 ) {
-            e.preventDefault();
-            if (headerMenu.hasClass('slided')) {
-                headerMenu.toggleClass('slided');
-                toggler.removeClass('clicked');
+    function closeOnEsc(closingItem, itemToggler) {
+        $(document).on('keydown', function(e) {
+            if ( e.keyCode === 27 ) {
+                e.preventDefault();
+                if (closingItem.hasClass('slided')) {
+                    closingItem.toggleClass('slided');
+                    itemToggler.removeClass('clicked');
+                }
             }
-        }
-    });
-    // Open/close on toggle-menu click
-    $(toggler).on('click', function() {
-        if ($(this).hasClass('clicked')) {
-            $(this).removeClass('clicked');
-        } else {
-            $(this).addClass('clicked');
-        }
-        headerMenu.toggleClass('slided');
-        return false;
-    });
+        });
+    }
+    closeOnEsc(headerMenu, menuToggler);
+    closeOnEsc(searchForm, searchToggler);
+    // Open/close on toggler click
+    function toggler(itemToggler, toggledItem) {
+        $(itemToggler).on('click', function() {
+            if ($(this).hasClass('clicked')) {
+                $(this).removeClass('clicked');
+            } else {
+                $(this).addClass('clicked');
+            }
+            toggledItem.toggleClass('slided');
+            return false;
+        });
+    }
+    toggler(menuToggler, headerMenu);
+    toggler(searchToggler, searchForm);
     // Close on close button click
-    $(closeButton).on('click', function() {
-        toggler.removeClass('clicked');
-        headerMenu.removeClass('slided');
-        return false;
-    });
+    function closeButton(button, toggler, closingItem) {
+        $(button).on('click', function() {
+            toggler.removeClass('clicked');
+            closingItem.removeClass('slided');
+            return false;
+        });
+    }
+    closeButton(menuCloseButton, menuToggler, headerMenu);
+    closeButton(searchCloseButton, searchToggler, searchForm);
     // Close on any other item click
-    $(document).on('click', function(event) {	
-        if (headerMenu.hasClass('slided') && $(event.target).closest(headerMenu).length == 0) {
-            headerMenu.toggleClass('slided');
-            toggler.removeClass('clicked');  
-        }
-    });
-    
+    function clickOutsideToClose(closingItem, toggler) {
+        $(document).on('click', function(event) {	
+            if (closingItem.hasClass('slided') && $(event.target).closest(closingItem).length == 0) {
+                closingItem.toggleClass('slided');
+                toggler.removeClass('clicked');  
+            }
+        });
+    }
+    clickOutsideToClose(headerMenu, menuToggler);
+    clickOutsideToClose(searchForm, searchToggler);
 });

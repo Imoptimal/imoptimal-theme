@@ -7,12 +7,13 @@
     </head>
 
     <body <?php body_class(); ?>>
-        <?php if (!function_exists('imothm_body_open')) {
-    function imothm_body_open() {
-        do_action('wp_body_open');
-    }
-} ?>
-
+        <?php
+        if (function_exists('wp_body_open')) {
+            wp_body_open();
+        } else {
+            do_action('wp_body_open');
+        }
+        ?>
         <div class="imothm-container">
 
             <a class="skip-link screen-reader-text" href="#imothm-content">
@@ -33,15 +34,12 @@
             $imothm_header = function() {
 
                 $handle_title = esc_html__("Dropdown Menu", "imoptimal");
-                $menu_label = esc_html__("Menu", "imoptimal");
                 echo "<div class='dropdown-menu'>
                             <input type='checkbox' class='handle js-off screen-reader-text'>
-                            <label class='toggle-menu' for='dropdown-menu' title='{$handle_title}'>
-                                {$menu_label}
+                            <label class='menu toggle' for='dropdown-menu' title='{$handle_title}'>
+                                <div class='menu icon'></div>
 			                 </label>";
-                {
-
-                }
+                
                 wp_nav_menu( array(
                     'theme_location' => 'header',
                     'container_class' => 'header-menu')

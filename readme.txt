@@ -1,11 +1,10 @@
 === Imoptimal ===
 Contributors: imoptimal
 Requires at least: 5.0
-Tested up to: 5.2
+Tested up to: 5.4.2
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
-Stable tag: trunk
 
 == Description ==
 Simplistic theme, with an option to enable users to build their whole website with widgets (option available inside of admin menu, at Appearance/Customize). Best if used with Pagebuilder by Siteorigin plugin, and its widgets bundle. Intended for technically advanced users that build their own websites or websites for others, as a tool to make this process more efficient. IMPORTANT: CSS knowledge mandatory in order to use this theme to its fullest potential.
@@ -49,6 +48,12 @@ Added border between full post content and comment area.
 = 1.5.1 =
 Lowered the resolution at which two column design becomes one column (right sidebar moves under the main content area).
 
+= 1.5.2 =
+Added wp_body_open function accordingly; Moved the comment-reply script to functions.php (instead of footer.php)
+
+= 1.5.3 =
+Modernized the header section by adding the menu and search icons, as well as making the search form sliding section (as the dropdown menu).
+
 == Copyright ==
 Imoptimal Theme, Copyright 2020 Ivan Maljukanovic
 Imoptimal is distributed under the terms of the GNU GPL
@@ -70,6 +75,6 @@ along with this program.  If not, see <https://www.gnu.org/licenses/gpl-3.0.en.h
 * modernizr 3.6.0 (Custom Build), MIT - available @ https://modernizr.com/
 
 Resources used in the theme screenshot:
-* Photo of my cat Mizza © 2010 Swanheart, CC0 - made for me on my request; given to me free of charge; not available online
+* Photo of the girl in the field © 2018 Olga, CC0 - free to use, available @ https://www.pexels.com/photo/action-carefree-cropland-daylight-1146242/
 * The logo © 2018 Ivan Maljukanović, CC0 - made by me, not available online apart from my own personal website (used as an asset) @ https://imoptimal.com
 * Icons © Alexander Kahlkopf, https://iconmonstr.com/license/ - available free of charge @ https://iconmonstr.com/

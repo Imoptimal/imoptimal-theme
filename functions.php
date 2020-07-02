@@ -5,6 +5,9 @@ if(!function_exists('imothm_theme_functions')) {
         function imothm_site_resources() {
             wp_enqueue_style( 'imothm-style', get_template_directory_uri() . '/style.css', array());
             wp_enqueue_script('imothm-footer', get_template_directory_uri() . '/js/footer.js', array('jquery'), '1.0', true );
+            if (is_singular()) {
+                wp_enqueue_script("comment-reply");
+            }
         }
         add_action('wp_enqueue_scripts', 'imothm_site_resources');
 

@@ -4,7 +4,9 @@ Theme URI: https://imoptimal.com/portfolio/imoptimal-wordpress-theme/
 Author: Ivan Maljukanović @imoptimal
 Author URI: imoptimal.com
 Description: Simplistic theme, with an option to enable users to build their whole website with widgets (option available inside of admin menu, at Appearance/Customize). Best if used with Pagebuilder by Siteorigin plugin, and its widgets bundle. Intended for technically advanced users that build their own websites or websites for others, as a tool to make this process more efficient. IMPORTANT: CSS knowledge mandatory in order to use this theme to its fullest potential. It provides widget areas in these sections: header, footer, sidebar, homepage content, page content, 404 page, and shop page (if woocommerce plugin is active). All of the mentioned areas are available to the user inside of the Customizer widget area also, except the 404 page widget (which can be edited only through wp-admin widgets area).
-Version: 1.5.1
+Version: 1.5.3
+Tested up to: 5.4.2
+Requires PHP: 7.0
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: imoptimal
@@ -28,8 +30,9 @@ Tags: theme-options, translation-ready, one-column, full-width-template, two-col
 * {
     position: relative;
     -webkit-box-sizing:border-box;
-    box-sizing:border-box;
+            box-sizing:border-box;
     -webkit-transition: all 0.25s;
+    -o-transition: all 0.25s;
     transition: all 0.25s;
 }
 
@@ -111,37 +114,38 @@ ul {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
     overflow-x: hidden;
 }
 
 .imothm-container .site-header {
     -ms-flex-preferred-size: 15%;
-    flex-basis: 15%;
+        flex-basis: 15%;
     background-color: #050303;
     background-image: -webkit-gradient(linear, right top, left top, from(#050303), color-stop(#27061c), to(#84285b));
+    background-image: -o-linear-gradient(right, #050303, #27061c, #84285b);
     background-image: linear-gradient(to left, #050303, #27061c, #84285b);
     padding: 20px;
     margin-bottom: 10px;
     -webkit-box-shadow: 0 10px 10px #efedf5;
-    box-shadow: 0 10px 10px #efedf5;
+            box-shadow: 0 10px 10px #efedf5;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+        flex-wrap: wrap;
     -ms-flex-pack: distribute;
-    justify-content: space-around;
+        justify-content: space-around;
     -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .imothm-container .site-header .logged-in {
@@ -151,8 +155,8 @@ ul {
 
 .imothm-container .site-header .dropdown-menu {
     padding: 0;
-    -ms-flex-preferred-size: 35%;
-    flex-basis: 35%;
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;
 }
 
 .imothm-container .site-header .dropdown-menu .handle {
@@ -161,16 +165,39 @@ ul {
     left: 0;
 }
 
-.imothm-container .site-header .dropdown-menu .toggle-menu {
+.imothm-container .site-header .toggle {
+    display: block;
     font-size: 24px;
     font-style: bold;
     color: #f4c951;
     cursor: pointer;
+    text-align: center;
 }
 
-.imothm-container .site-header .dropdown-menu .toggle-menu:hover,
-.imothm-container .site-header .dropdown-menu .handle:focus + .toggle-menu,
-.imothm-container .site-header .dropdown-menu .toggle-menu.clicked,
+.imothm-container .site-header .toggle .icon {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto;
+    -webkit-transform: scale(0.66);
+        -ms-transform: scale(0.66);
+            transform: scale(0.66);
+}
+
+.imothm-container .site-header .toggle .icon.menu {
+    background-image: url("./img/icons.png");
+    background-repeat: no-repeat;
+    background-position: left top;
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+.imothm-container .site-header .icon.menu:hover,
+.imothm-container .site-header .handle:focus + .toggle > .icon.menu,
+.imothm-container .site-header .toggle.clicked > .icon.menu {
+    background-position: left -65px top;
+}
+
 .imothm-container .site-header li.current-menu-item > a:visited {
     text-decoration: underline;
     color: #efedf5; 
@@ -187,7 +214,7 @@ ul {
 .imothm-container .site-header .dropdown-menu .header-menu {
     position: absolute;
     left: -9999px;
-    top: 35px;
+    top: 75px;
     visibility: hidden;
     max-height: 250px;
     overflow-y: scroll;
@@ -195,7 +222,7 @@ ul {
     border: solid 2px #f4c951;
     padding: 20px;
     -webkit-box-shadow: 10px 10px 10px #efedf5;
-    box-shadow: 10px 10px 10px #efedf5;
+            box-shadow: 10px 10px 10px #efedf5;
     z-index: 10;
 }
 
@@ -230,31 +257,37 @@ ul {
 }
 
 .imothm-container .site-header .bloginfo {
-    -ms-flex-preferred-size: 20%;
-    flex-basis: 20%;
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -ms-flex-pack: distribute;
-    justify-content: space-around;
+        justify-content: space-around;
     -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.imothm-container .site-header .bloginfo .custom-logo {
+    max-width: 120px;
 }
 
 .imothm-container .site-header .bloginfo .custom-logo-link:hover,
 .imothm-container .site-header .bloginfo .custom-logo-link:focus {
     -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
 }
 
 .imothm-container .site-header .bloginfo .custom-logo-link:active {
     -webkit-transform: scale(1);
-    transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
 }
 
 .imothm-container .site-header .bloginfo .spans span {
@@ -265,9 +298,56 @@ ul {
     font-size: 14px;
 }
 
-.imothm-container .site-header .search {
-    -ms-flex-preferred-size: 35%;
-    flex-basis: 35%;
+.imothm-container .site-header .search-toggle {
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;
+}
+
+.imothm-container .site-header .search-toggle .content {
+    padding: 10px;
+}
+
+.imothm-container .site-header .search-toggle .handle {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.imothm-container .site-header .toggle .icon.search {
+    background-image: url("./img/icons.png");
+    background-repeat: no-repeat;
+    background-position: left -130px top 0;
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+.imothm-container .site-header .icon.search:hover,
+.imothm-container .site-header .handle:focus + .toggle > .icon.search,
+.imothm-container .site-header .toggle.clicked > .icon.search {
+    background-position: left -195px top;
+}
+
+.imothm-container .site-header .search-toggle .handle:focus ~ #searchform,
+.imothm-container .site-header .search-toggle .content:hover ~ #searchform,
+.imothm-container .site-header .search-toggle input:focus ~ #searchform,
+.imothm-container .site-header .search-toggle #searchform.slided {
+    right: 5%;
+    visibility: visible;
+}
+
+.imothm-container .site-header .search-toggle #searchform {
+    position: absolute;
+    right: -9999px;
+    top: 75px;
+    visibility: hidden;
+    max-height: 120px;
+    background-color: #050303;
+    border: solid 2px #f4c951;
+    padding: 20px;
+    -webkit-box-shadow: 10px 10px 10px #efedf5;
+            box-shadow: 10px 10px 10px #efedf5;
+    z-index: 10;
 }
 
 .imothm-container .site-header #search-submit,
@@ -289,6 +369,10 @@ ul {
     cursor: pointer;
 }
 
+.imothm-container .imothm-content {
+    padding: 10px 0;
+}
+
 .imothm-container .homepage {
     padding: 0 10px;
     display: -webkit-box;
@@ -296,14 +380,14 @@ ul {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .imothm-container .columns {
@@ -311,12 +395,12 @@ ul {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+        flex-wrap: wrap;
     -ms-flex-pack: distribute;
-    justify-content: space-around;
+        justify-content: space-around;
     -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
 }
 
 .imothm-container .main-column {
@@ -327,33 +411,30 @@ ul {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
 }
 
 .imothm-container .side-column {
     -ms-flex-preferred-size: 20%;
-    flex-basis: 20%;
+        flex-basis: 20%;
     max-width: 480px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
 }
 
 .imothm-container .post {
@@ -403,14 +484,14 @@ ul {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .imothm-container .comments-area form label {
@@ -455,26 +536,27 @@ ul {
 
 .imothm-container .site-footer {
     -ms-flex-preferred-size: 20%;
-    flex-basis: 20%;
+        flex-basis: 20%;
     background-color: #050303;
     background-image: -webkit-gradient(linear, left top, right top, from(#050303), color-stop(#27061c), to(#84285b));
+    background-image: -o-linear-gradient(left, #050303, #27061c, #84285b);
     background-image: linear-gradient(to right, #050303, #27061c, #84285b);
     padding: 20px 10px 30px 10px;
     margin-top: 10px;
     -webkit-box-shadow: 0 -10px 10px #efedf5;
-    box-shadow: 0 -10px 10px #efedf5;
+            box-shadow: 0 -10px 10px #efedf5;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -ms-flex-pack: distribute;
-    justify-content: space-around;
+        justify-content: space-around;
     -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
 }
 
 .imothm-container .site-footer .footer-content {
@@ -482,17 +564,15 @@ ul {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+        flex-wrap: wrap;
     -ms-flex-pack: distribute;
-    justify-content: space-around;
+        justify-content: space-around;
     -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .imothm-container .footer-menu {
-    -ms-flex-preferred-size: 50%;
-    flex-basis: 50%;
     padding: 0 0 0 20px;
 }
 
@@ -508,15 +588,15 @@ ul {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+        flex-wrap: wrap;
     -ms-flex-pack: distribute;
-    justify-content: space-around;
+        justify-content: space-around;
     -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     max-height: 250px;
     overflow-x: scroll;
 }
@@ -540,20 +620,20 @@ ul {
 
 .imothm-container .footer-widget-area {
     -ms-flex-preferred-size: 50%;
-    flex-basis: 50%;
+        flex-basis: 50%;
     padding: 0 20px 0 0;
     text-align: center;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+        flex-wrap: wrap;
     -webkit-box-pack: end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .imothm-container .branding {
@@ -694,6 +774,7 @@ ul {
     right: -10px;
     word-wrap: normal !important;
     -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
     transition: all 0.2s;
     z-index: 100000;
     /* Above WP toolbar. */
@@ -756,8 +837,10 @@ ul {
 .customize-partial-edit-shortcut:hover ~ * { 
     opacity: 0.75;
     -webkit-transform: translate(10px, 10px) scale(1.05);
-    transform: translate(10px, 10px) scale(1.05);
+        -ms-transform: translate(10px, 10px) scale(1.05);
+            transform: translate(10px, 10px) scale(1.05);
     -webkit-transition: 0.3s all;
+    -o-transition: 0.3s all;
     transition: 0.3s all;
 }
 
@@ -767,6 +850,7 @@ ul {
     color: #efedf5;
     background-color: #27061c;
     background-image: -webkit-gradient(linear, left bottom, left top, from(#050303), color-stop(#27061c), to(#84285b));
+    background-image: -o-linear-gradient(bottom, #050303, #27061c, #84285b);
     background-image: linear-gradient(to top, #050303, #27061c, #84285b);
     min-height: 100vh;
     min-width: 100vw;
@@ -776,14 +860,14 @@ ul {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .imothm-container .imothm-content-404 h2 span {
@@ -795,39 +879,16 @@ ul {
 
     .imothm-container .main-column {
         -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+            flex-basis: 100%;
         max-width: 100%; 
     }
 
     .imothm-container .side-column {
         -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+            flex-basis: 100%;
         max-width: 100%; 
         border-top: solid 2px #f4c951;
         margin: 10px 25px;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-
-    .imothm-container .site-header .bloginfo,
-    .imothm-container .site-header .search,
-    .imothm-container .footer-menu,
-    .imothm-container .footer-widget-area {
-        -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
-        -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-        order: 1;
-    }
-
-    .imothm-container .site-header .dropdown-menu {
-        -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
-        -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-        order: 2;
-        margin: 20px 0;
     }
 }
 

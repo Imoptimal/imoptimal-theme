@@ -22,8 +22,6 @@ if(is_404()) {
             };
 
             imothm_widgetization('footer-sidebar', $imothm_footer);
-
-            if ( is_singular() ) wp_enqueue_script( "comment-reply" );
         }
         imothm_footer_wrap();
     }

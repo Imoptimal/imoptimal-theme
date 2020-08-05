@@ -1,6 +1,8 @@
 # imoptimal-theme
 @ Official WordPress.org theme repository – focused on enabling the option to build websites fully through widgets
+
 Avaliable @ [wordpress.org/themes/imoptimal/](https://wordpress.org/themes/imoptimal/)
+
 Theme demo @ [github/imoptimal-theme-demo](https://imoptimal.github.io/imoptimal-theme-demo/)
 
 = 1.0.0 - 1.4.0 =

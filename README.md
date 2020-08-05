@@ -1,5 +1,7 @@
 # imoptimal-theme
 @ Official WordPress.org theme repository – focused on enabling the option to build websites fully through widgets
+Avaliable @ [wordpress.org/themes/imoptimal/](https://wordpress.org/themes/imoptimal/)
+Theme demo @ [github/imoptimal-theme-demo](https://imoptimal.github.io/imoptimal-theme-demo/)
 
 = 1.0.0 - 1.4.0 =
 Approval process - modified and learned a lot.
@@ -30,3 +32,6 @@ Added comment area styles.
 
 = 1.5.0 =
 Added border between full post content and comment area.
+
+= 1.5.3 =
+Header section revamped (search modernized) - visible in the changed theme's screenshot.

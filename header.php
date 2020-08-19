@@ -13,9 +13,19 @@
         } else {
             do_action('wp_body_open');
         }
+        
+        if (!function_exists('imothm_elementor')) {
+            function imothm_elementor() {
+                $imothm_widgetization = get_theme_mod('imothm_theme_widgetization', imothm_get_option_defaults());
+                if ($imothm_widgetization == 'elementor') { ?>
+                    <div class="imothm-container imothm-elementor">
+                <?php } else { ?>
+                    <div class="imothm-container">
+                <?php }
+            }
+            imothm_elementor();
+        }
         ?>
-        <div class="imothm-container">
-
             <a class="skip-link screen-reader-text" href="#imothm-content">
                 <?php esc_html_e( 'Skip to content', 'imoptimal' ); ?> </a>
 
@@ -23,9 +33,8 @@
     $empty = '';
     return $empty;
 } else { ?>
-
-            <header class="site-header">
-                <?php
+        <header class="site-header">
+    <?php
     if(is_user_logged_in()) {
         echo "<div class='logged-in'></div>";
     }

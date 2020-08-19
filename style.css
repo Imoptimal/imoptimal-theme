@@ -3,10 +3,11 @@ Theme Name: Imoptimal
 Theme URI: https://imoptimal.com/portfolio/imoptimal-wordpress-theme/
 Author: Ivan Maljukanović @imoptimal
 Author URI: imoptimal.com
-Description: Simplistic theme, with an option to enable users to build their whole website with widgets (option available inside of admin menu, at Appearance/Customize). Best if used with Pagebuilder by Siteorigin plugin, and its widgets bundle. Intended for technically advanced users that build their own websites or websites for others, as a tool to make this process more efficient. IMPORTANT: CSS knowledge mandatory in order to use this theme to its fullest potential. It provides widget areas in these sections: header, footer, sidebar, homepage content, page content, 404 page, and shop page (if woocommerce plugin is active). All of the mentioned areas are available to the user inside of the Customizer widget area also, except the 404 page widget (which can be edited only through wp-admin widgets area).
-Version: 1.5.3
-Tested up to: 5.4.2
-Requires PHP: 7.0
+Description: Simplistic theme, with an option (available inside of admin menu, at Appearance/Customize) to enable users to build their whole website either through: a) Widgets - best if used with Pagebuilder by Siteorigin plugin, and its widgets bundle; b) Elementor - most popular website builder plugin. Intended for technically advanced users that build their own websites or websites for others, as a tool to make this process more efficient. IMPORTANT: Both widget and elementor option should be used to build a website through pages (not posts).
+Version: 1.5.4
+Requires at least: 4.9.8
+Requires PHP: 5.6
+Tested up to: 5.5
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: imoptimal
@@ -17,6 +18,7 @@ Tags: theme-options, translation-ready, one-column, full-width-template, two-col
 /* Style order:
 1. Basic HTML
 2. Theme Elements
+    2a. Elementor
 3. Required
 4. Block custom colors
 5. Accessibility
@@ -129,8 +131,8 @@ ul {
     -ms-flex-preferred-size: 15%;
         flex-basis: 15%;
     background-color: #050303;
-    background-image: -webkit-gradient(linear, right top, left top, from(#050303), color-stop(#27061c), to(#84285b));
     background-image: -o-linear-gradient(right, #050303, #27061c, #84285b);
+    background-image: -webkit-gradient(linear, right top, left top, from(#050303), color-stop(#27061c), to(#84285b));
     background-image: linear-gradient(to left, #050303, #27061c, #84285b);
     padding: 20px;
     margin-bottom: 10px;
@@ -450,6 +452,13 @@ ul {
     padding-bottom: 20px;
 }
 
+.imothm-container .post-info a.current {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    text-decoration: underline;
+    color: #efedf5;
+}
+
 .imothm-container .post .excerpt {
     text-align: left;
     padding-bottom: 10px;
@@ -469,7 +478,7 @@ ul {
 
 .imothm-container .comments-area {
     border-top: solid 2px #f4c951;
-    max-width: 90%;
+    max-width: 100%;
     padding: 10px;
     margin: 0;
 }
@@ -538,8 +547,8 @@ ul {
     -ms-flex-preferred-size: 20%;
         flex-basis: 20%;
     background-color: #050303;
-    background-image: -webkit-gradient(linear, left top, right top, from(#050303), color-stop(#27061c), to(#84285b));
     background-image: -o-linear-gradient(left, #050303, #27061c, #84285b);
+    background-image: -webkit-gradient(linear, left top, right top, from(#050303), color-stop(#27061c), to(#84285b));
     background-image: linear-gradient(to right, #050303, #27061c, #84285b);
     padding: 20px 10px 30px 10px;
     margin-top: 10px;
@@ -648,8 +657,36 @@ ul {
     margin: 10px;
 }
 
-.imothm-container .widget .no-title .widget-title {
-    display: none !important;
+/* 2a. Elementor */
+
+.imothm-elementor {
+    padding: 0;
+    margin: 0 auto;
+}
+
+.imothm-elementor .imothm-content,
+.imothm-elementor .columns,
+.imothm-elementor .post {
+    padding: 0;
+    margin: 0;
+}
+
+.imothm-elementor .site-header,
+.imothm-elementor .site-footer,
+.imothm-elementor .side-column,
+.imothm-elementor .page-title {
+    display: none;
+}
+
+.imothm-elementor .main-column {
+    padding: 0;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    max-width: 100%;
+}
+
+.imothm-elementor .elementor-container {
+    max-width: 1920px !important;
 }
 
 /* 3. Required */
@@ -849,8 +886,8 @@ ul {
     position: relative;
     color: #efedf5;
     background-color: #27061c;
-    background-image: -webkit-gradient(linear, left bottom, left top, from(#050303), color-stop(#27061c), to(#84285b));
     background-image: -o-linear-gradient(bottom, #050303, #27061c, #84285b);
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#050303), color-stop(#27061c), to(#84285b));
     background-image: linear-gradient(to top, #050303, #27061c, #84285b);
     min-height: 100vh;
     min-width: 100vw;
@@ -891,4 +928,3 @@ ul {
         margin: 10px 25px;
     }
 }
-

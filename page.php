@@ -10,7 +10,7 @@
                 function imothm_pages_wrap() {
                     $imothm_pages = function() { ?>
             <article <?php imothm_add_post_classes('post', 'has-thumbnail'); ?>>
-                <h1><?php the_title(); ?></h1>
+                <h1 class="page-title"><?php the_title(); ?></h1>
                 <div class="entry-content">
                     <?php the_content(); ?>
                 </div>

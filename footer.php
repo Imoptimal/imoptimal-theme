@@ -2,8 +2,8 @@
 if(is_404()) {
     imothm_watermark(); 
 } else { ?>
-<footer class="site-footer">
-    <?php 
+        <footer class="site-footer">
+    <?php
     if(!function_exists('imothm_footer_wrap')) {
         function imothm_footer_wrap() {
             $imothm_footer = function() {

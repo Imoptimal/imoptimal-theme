@@ -1,9 +1,12 @@
 <?php
 if(!function_exists('imothm_theme_functions')) {
     function imothm_theme_functions() {
+        get_template_part('admin-notices/Dismiss.php');
+        get_template_part('admin-notices/Notice.php');
+        get_template_part('admin-notices/Notices.php');
         //	Inserting style and script documents
         function imothm_site_resources() {
-            wp_enqueue_style( 'imothm-style', get_template_directory_uri() . '/style.css', array());
+            wp_enqueue_style('imothm-style', get_template_directory_uri() . '/style.css', array());
             wp_enqueue_script('imothm-footer', get_template_directory_uri() . '/js/footer.js', array('jquery'), '1.0', true );
             if (is_singular()) {
                 wp_enqueue_script("comment-reply");
@@ -189,49 +192,63 @@ if(!function_exists('imothm_theme_functions')) {
 
         // Customizer theme options
         function imothm_customize_register( $wp_customize ) {
+
             $wp_customize->add_setting( 'imothm_theme_widgetization', array(
                 'type' => 'theme_mod', // or 'option'
                 'capability' => 'edit_theme_options', // Administrator only
                 'theme_supports' => '',
-                'default' => 'false', // unchecked
+                'default' => 'none',
                 'transport' => 'refresh', // or postMessage (if js is used for preview)
                 'sanitize_callback' => 'imothm_sanitaze_callback'
             ));
 
             $wp_customize->add_section('imothm_theme_section', array(
-                'title' => esc_html__( 'Imoptimal - Widgetization', 'imoptimal' ),
+                'title' => esc_html__('Imoptimal - Modification', 'imoptimal' ),
                 'description' => '',
             ));
 
-            $wp_customize->add_control( 'imothm_theme_ctrl', array(
-                'type' => 'checkbox',
+            $wp_customize->add_control('imothm_theme_ctrl', array(
+                'type' => 'radio',
                 'priority' => 10, // Within the section.
                 'settings' => 'imothm_theme_widgetization',
                 'section' => 'imothm_theme_section', // Required, core or custom.
-                'label' => esc_html__( 'Enable theme widgetization', 'imoptimal' ),
-                'description' => esc_html__( 'Check the box if you want to enable the option to build your whole website with widgets. Otherwise, if checkbox remains unchecked, default page templates will be used.', 'imoptimal' ),
+                'label' => esc_html__('Theme modification options', 'imoptimal' ),
+                'description' => esc_html__('Check an option of theme modification - through widgets or by Elementor', 'imoptimal' ),
+                'choices' => array(
+                    'none' => esc_html__('No modification', 'imoptimal'),
+                    'widgets' => esc_html__('Widgetization', 'imoptimal'),
+                    'elementor' => esc_html__('Elementorization', 'imoptimal'),
+                  ),
             ));
 
-            function imothm_sanitaze_callback($checked) {
-                // Boolean check.
-                return ((isset($checked) && true == $checked ) ? true : false );
+            function imothm_sanitaze_callback($input) {
+                $valid = array(
+                    'none' => esc_html__('No modification', 'imoptimal'),
+                    'widgets' => esc_html__('Widgetization', 'imoptimal'),
+                    'elementor' => esc_html__('Elementorization', 'imoptimal'),
+                );
+             
+                if (array_key_exists($input, $valid)) {
+                    return $input;
+                } else {
+                    return '';
+                }
             }
-
         }
-        add_action( 'customize_register', 'imothm_customize_register' );
+        add_action('customize_register', 'imothm_customize_register');
 
         // Sane defaults 
         function imothm_get_option_defaults() {
             $defaults = array(
-                'checked' => 'false'
+                'none' => esc_html__('No modification', 'imoptimal')
             );
-            return apply_filters( 'imothm_get_option_defaults', $defaults );
+            return apply_filters('imothm_get_option_defaults', $defaults );
         }
 
         // Enable widgetization if theme option is enabled, else leave the default template
         function imothm_widgetization($sidebar, $function) {
             $imothm_widgetization = get_theme_mod('imothm_theme_widgetization', imothm_get_option_defaults());
-            if ($imothm_widgetization == 'true') {
+            if ($imothm_widgetization == 'widgets' || $imothm_widgetization == 'true') {    // true - previous theme version with checkbox
                 if (is_active_sidebar($sidebar)) :
                 dynamic_sidebar($sidebar);
                 endif;
@@ -262,17 +279,26 @@ if(!function_exists('imothm_theme_functions')) {
         function imothm_separate_categories() {
             if(has_category()) {
                 esc_html_e('Categorized as: ', 'imoptimal');
-                the_category( ' / ' );
+                //the_category( ' ' );
+                $terms = get_the_category();
+                foreach ($terms as $term) {
+                    $class = (is_category($term->name)) ? 'current' : '';
+                    echo '<a href="' . get_term_link($term) . '" class="' . $class . '">' . $term->name . '</a> ';
+                }
             } else {
                 esc_html_e('Uncategorized', 'imoptimal'); 
             }
         }
-
         //Display tags with separator
         function imothm_separate_tags() {
             if(has_tag()) {
                 esc_html_e('Tags: ', 'imoptimal');
-                the_tags('', ' / ' );
+                //the_tags('', ' ' );
+                $terms = get_the_tags();
+                foreach ($terms as $term) {
+                    $class = (is_tag($term->name)) ? 'current' : '';
+                    echo '<a href="' . get_term_link($term) . '" class="' . $class . '">' . $term->name . '</a> ';
+                }
             } else {
                 esc_html_e('Untagged', 'imoptimal');
             }
@@ -311,6 +337,15 @@ if(!function_exists('imothm_theme_functions')) {
             $imoptimal = esc_html__("Imoptimal", "imoptimal");
             echo "<div class='branding'>{$designed} <a href='{$link}' target='_blank'>{$imoptimal}</a><div>";
         }
+
+        // Admin notices
+        function imothm_admin_notice() {
+            $message = esc_html__('Imoptimal Theme version 1.5.4 added another Customizer option besides the widgetization of your website - making it easy for you to build your whole website by Elementor as well.', 'imoptimal');
+            echo "<div class='notice notice-info is-dismissible'>
+                <p>{$message}</p>
+            </div>";
+        }
+        add_action('admin_notices', 'imothm_admin_notice');
 
     }
     imothm_theme_functions();

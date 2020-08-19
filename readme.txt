@@ -1,17 +1,11 @@
 === Imoptimal ===
 Contributors: imoptimal
-Requires at least: 5.0
-Tested up to: 5.4.2
-Requires PHP: 7.0
+Tested up to: 5.5
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 == Description ==
-Simplistic theme, with an option to enable users to build their whole website with widgets (option available inside of admin menu, at Appearance/Customize). Best if used with Pagebuilder by Siteorigin plugin, and its widgets bundle. Intended for technically advanced users that build their own websites or websites for others, as a tool to make this process more efficient. IMPORTANT: CSS knowledge mandatory in order to use this theme to its fullest potential.
-
-It provides widget areas in these sections:
-header, footer, sidebar, homepage content, page content, 404 page, and shop page (if woocommerce plugin is active).
-All of the mentioned areas are available to the user inside of the Customizers widget area also, except the 404 page widget (which can be edited only through wp-admin widgets area).
+Simplistic theme, with an option (available inside of admin menu, at Appearance/Customize) to enable users to build their whole website either through: a) Widgets - best if used with Pagebuilder by Siteorigin plugin, and its widgets bundle; b) Elementor - most popular website builder plugin. Intended for technically advanced users that build their own websites or websites for others, as a tool to make this process more efficient. IMPORTANT: Both widget and elementor option should be used to build a website through pages (not posts).
 
 == Changelog ==
 
@@ -54,6 +48,9 @@ Added wp_body_open function accordingly; Moved the comment-reply script to funct
 = 1.5.3 =
 Modernized the header section by adding the menu and search icons, as well as making the search form sliding section (as the dropdown menu).
 
+= 1.5.4 =
+Added an elementor option to the theme customizer.
+
 == Copyright ==
 Imoptimal Theme, Copyright 2020 Ivan Maljukanovic
 Imoptimal is distributed under the terms of the GNU GPL
@@ -73,8 +70,9 @@ along with this program.  If not, see <https://www.gnu.org/licenses/gpl-3.0.en.h
 
 == Resources ==
 * modernizr 3.6.0 (Custom Build), MIT - available @ https://modernizr.com/
+* Menu/Search icon © Alexander Kahlkopf, https://iconmonstr.com/license/ - available free of charge @ https://iconmonstr.com/
 
 Resources used in the theme screenshot:
 * Photo of the girl in the field © 2018 Olga, CC0 - free to use, available @ https://www.pexels.com/photo/action-carefree-cropland-daylight-1146242/
-* The logo © 2018 Ivan Maljukanović, CC0 - made by me, not available online apart from my own personal website (used as an asset) @ https://imoptimal.com
+* The logo © 2020 Ivan Maljukanović, CC0 - made by me, not available online apart from my own personal website (used as an asset) @ https://imoptimal.com
 * Icons © Alexander Kahlkopf, https://iconmonstr.com/license/ - available free of charge @ https://iconmonstr.com/

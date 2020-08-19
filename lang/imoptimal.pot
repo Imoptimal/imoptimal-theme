@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
@@ -91,170 +91,178 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content.php:19 content.php:38 content.php:45
+#: content.php:20 content.php:40 content.php:48
 msgid "Read more"
 msgstr ""
 
-#: functions.php:15
+#: functions.php:21
 msgid "Header Menu"
 msgstr ""
 
-#: functions.php:16
+#: functions.php:22
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:71
+#: functions.php:77
 msgid "Dark"
 msgstr ""
 
-#: functions.php:76
+#: functions.php:82
 msgid "Ice"
 msgstr ""
 
-#: functions.php:81
+#: functions.php:87
 msgid "Latte"
 msgstr ""
 
-#: functions.php:86
+#: functions.php:92
 msgid "Dark Purple"
 msgstr ""
 
-#: functions.php:91
+#: functions.php:97
 msgid "Light Purple"
 msgstr ""
 
-#: functions.php:114
+#: functions.php:120
 msgid "Header"
 msgstr ""
 
-#: functions.php:116
+#: functions.php:122
 msgid "Widget area added in the header section."
 msgstr ""
 
-#: functions.php:124
+#: functions.php:130
 msgid "Homepage"
 msgstr ""
 
-#: functions.php:126
+#: functions.php:132
 msgid "Widget area added in the homepage content section."
 msgstr ""
 
-#: functions.php:134
+#: functions.php:140
 msgid "Pages"
 msgstr ""
 
-#: functions.php:136
+#: functions.php:142
 msgid "Widget area added in any page but homepage content section."
 msgstr ""
 
-#: functions.php:144
+#: functions.php:150
 msgid "Footer"
 msgstr ""
 
-#: functions.php:146
+#: functions.php:152
 msgid "Widget area added in the footer section."
 msgstr ""
 
-#: functions.php:154
+#: functions.php:160
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:156
+#: functions.php:162
 msgid "Widget area added in the sidebar section."
 msgstr ""
 
-#: functions.php:164
+#: functions.php:170
 msgid "404 error"
 msgstr ""
 
-#: functions.php:166
+#: functions.php:172
 msgid "Widget area added in the 404 page."
 msgstr ""
 
-#: functions.php:175
+#: functions.php:181
 msgid "Shop"
 msgstr ""
 
-#: functions.php:177
+#: functions.php:183
 msgid "Displays on WooCommerce pages."
 msgstr ""
 
-#: functions.php:199
-msgid "Imoptimal - Widgetization"
+#: functions.php:206
+msgid "Imoptimal - Modification"
 msgstr ""
 
-#: functions.php:208
-msgid "Enable theme widgetization"
+#: functions.php:215
+msgid "Theme modification options"
 msgstr ""
 
-#: functions.php:209
-msgid "Check the box if you want to enable the option to build your whole website with widgets. Otherwise, if checkbox remains unchecked, default page templates will be used."
+#: functions.php:216
+msgid "Check an option of theme modification - through widgets or by Elementor"
 msgstr ""
 
-#: functions.php:261
+#: functions.php:218 functions.php:226 functions.php:243
+msgid "No modification"
+msgstr ""
+
+#: functions.php:219 functions.php:227
+msgid "Widgetization"
+msgstr ""
+
+#: functions.php:220 functions.php:228
+msgid "Elementorization"
+msgstr ""
+
+#: functions.php:281
 msgid "Categorized as: "
 msgstr ""
 
-#: functions.php:264
+#: functions.php:289
 msgid "Uncategorized"
 msgstr ""
 
-#: functions.php:271
+#: functions.php:295
 msgid "Tags: "
 msgstr ""
 
-#: functions.php:274
+#: functions.php:303
 msgid "Untagged"
 msgstr ""
 
-#: functions.php:280
+#: functions.php:309
 msgid "Pages:"
 msgstr ""
 
-#: functions.php:286
+#: functions.php:315
 msgid "Next page"
 msgstr ""
 
-#: functions.php:287
+#: functions.php:316
 msgid "Previous page"
 msgstr ""
 
-#: functions.php:306
+#: functions.php:335
 msgid "Designed by"
 msgstr ""
 
-#: functions.php:308
+#: functions.php:337
 msgid "Imoptimal"
 msgstr ""
 
-#: header.php:19
+#: functions.php:343
+msgid "Imoptimal Theme version 1.5.4 added another Customizer option besides the widgetization of your website - making it easy for you to build your whole website by Elementor as well."
+msgstr ""
+
+#: header.php:30
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:35
+#: header.php:45
 msgid "Dropdown Menu"
-msgstr ""
-
-#: header.php:36
-msgid "Menu"
 msgstr ""
 
 #: search.php:7
 msgid "Search results for:"
 msgstr ""
 
-#: searchform.php:3
-msgid "Search:"
+#: searchform.php:2 searchform.php:6
+msgid "Search"
 msgstr ""
 
 #: searchform.php:4
-msgid "Search content"
+msgid "Search:"
 msgstr ""
 
 #: searchform.php:5
 msgid "Type your search here"
-msgstr ""
-
-#: searchform.php:6
-msgid "Search"
 msgstr ""

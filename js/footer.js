@@ -155,3 +155,12 @@ jQuery(function($) {
     clickOutsideToClose(headerMenu, menuToggler);
     clickOutsideToClose(searchForm, searchToggler);
 });
+
+// Elementor option disabled on archive or single post pages (missing header, footer and sidebar)
+jQuery(function($) {
+    container = $('.imothm-container');
+    if (container.parents('.archive, .single-post').length != 0) {
+        container.removeClass('imothm-elementor');
+    }
+});
+

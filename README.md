@@ -39,7 +39,10 @@ Added border between full post content and comment area.
 Lowered the resolution at which two column design becomes one column (right sidebar moves under the main content area).
 
 = 1.5.2 =
-Added wp_body_open function accordingly; Moved the comment-reply script to functions.php (instead of footer.php)
+Added wp_body_open function accordingly; Moved the comment-reply script to functions.php (instead of footer.php).
 
 = 1.5.3 =
 Header section revamped (search modernized) - visible in the changed theme's screenshot.
+
+= 1.5.4 =
+Added an elementor option to the theme customizer.

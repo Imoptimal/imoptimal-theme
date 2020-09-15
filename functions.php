@@ -339,7 +339,11 @@ if(!function_exists('imothm_theme_functions')) {
         }
 
         // Admin notices
-        function imothm_admin_notice() {
+        function imothm_admin_notice($hook) {
+            $hook = get_current_screen();
+            if ($hook->id != "dashboard") { // if not the main dashboard page
+                return;
+            }
             $message = esc_html__('Imoptimal Theme version 1.5.4 added another Customizer option besides the widgetization of your website - making it easy for you to build your whole website by Elementor as well.', 'imoptimal');
             echo "<div class='notice notice-info is-dismissible'>
                 <p>{$message}</p>

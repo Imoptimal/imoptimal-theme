@@ -1,6 +1,6 @@
 === Imoptimal ===
 Contributors: imoptimal
-Tested up to: 5.5
+Tested up to: 5.5.1
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -51,6 +51,9 @@ Modernized the header section by adding the menu and search icons, as well as ma
 = 1.5.4 =
 Added an elementor option to the theme customizer.
 
+= 1.5.5 =
+Restricted the admin notice only on the main dashboard page.
+
 == Copyright ==
 Imoptimal Theme, Copyright 2020 Ivan Maljukanovic
 Imoptimal is distributed under the terms of the GNU GPL
@@ -69,7 +72,6 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/gpl-3.0.en.html/>
 
 == Resources ==
-* modernizr 3.6.0 (Custom Build), MIT - available @ https://modernizr.com/
 * Menu/Search icon © Alexander Kahlkopf, https://iconmonstr.com/license/ - available free of charge @ https://iconmonstr.com/
 
 Resources used in the theme screenshot:

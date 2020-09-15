@@ -239,7 +239,7 @@ msgstr ""
 msgid "Imoptimal"
 msgstr ""
 
-#: functions.php:343
+#: functions.php:347
 msgid "Imoptimal Theme version 1.5.4 added another Customizer option besides the widgetization of your website - making it easy for you to build your whole website by Elementor as well."
 msgstr ""
 

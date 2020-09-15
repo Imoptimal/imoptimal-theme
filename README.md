@@ -46,3 +46,6 @@ Header section revamped (search modernized) - visible in the changed theme's scr
 
 = 1.5.4 =
 Added an elementor option to the theme customizer.
+
+= 1.5.5 =
+Restricted the admin notice only on the main dashboard page.

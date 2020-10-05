@@ -1,9 +1,6 @@
 <?php
 if(!function_exists('imothm_theme_functions')) {
     function imothm_theme_functions() {
-        get_template_part('admin-notices/Dismiss.php');
-        get_template_part('admin-notices/Notice.php');
-        get_template_part('admin-notices/Notices.php');
         //	Inserting style and script documents
         function imothm_site_resources() {
             wp_enqueue_style('imothm-style', get_template_directory_uri() . '/style.css', array());

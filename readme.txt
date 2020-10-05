@@ -54,6 +54,9 @@ Added an elementor option to the theme customizer.
 = 1.5.5 =
 Restricted the admin notice only on the main dashboard page.
 
+= 1.5.6 =
+Adjusted default 404 error page styling.
+
 == Copyright ==
 Imoptimal Theme, Copyright 2020 Ivan Maljukanovic
 Imoptimal is distributed under the terms of the GNU GPL
